@@ -1,0 +1,67 @@
+	<html>
+	<head>
+		<title>
+			Registration Application
+		</title>
+		<link rel="stylesheet" href="regdiv.css" type:"style/css">
+	</head>
+	<body>
+		<div>
+			<h1><strong>Registration</strong> Form</h1>
+			<div class="inputdiv">
+				<label>First Name:</label> 
+				<input type="text" name="fname"><br><br>			
+				<label>Last Name:</label><input type="text" name="lname"><br><br>
+				<label>Age:</label><input type="number" min=18 max=60><br><br>
+				<label>Gender:</label><br>
+				
+				<input type="radio" name="gender" value="Male">
+				<label id="male-female">Male</label><br>
+				<input type="radio" name="gender" value="Female" checked>
+				<label id="male-female"> Female</label><br>
+			    
+				</div>
+			<div class="inputdiv">
+				<label>Address:</label>
+				<textarea name="address" rows="3" cols="20">
+			</textarea>
+
+			<br><br><br><br>
+		</div>
+		<div class="inputdiv">
+			<label>City:</label>
+			<select> 
+				<option> Hyderabad </option>
+				<option> Vizag</option>
+				<option> Vijayawada</option>
+				<option> Tirupathi</option>
+			</select>
+			<br><br>
+	</div>
+	<div class="inputdiv">
+		<label>State:</label>
+		<select>
+			<option> Andhrapradesh</option>
+			<option> Telangana</option>
+			<option> Mumbai</option>
+			<option> Kolkata</option>
+		</select>
+		<br><br>
+		<label>Terms and Conditions:</label>
+		<input type="checkbox"  name="checkbox">
+		<label id="male-female"> I Agree</label>
+		<br>
+		<br>
+	</div>	
+<div class="inputdiv">
+	<img src="download.jpg" title="Reflection" alt="Swan Image" type="jpg" width=150px height=100px>
+	<br><br><br><br><br><br>
+</div>
+<div class="inputdiv">
+	<video controls width="250" height="200">
+		<source src="sample.mp4" type="video/mp4">
+		</video>	
+	</div>
+</div>
+</body>
+</html>
