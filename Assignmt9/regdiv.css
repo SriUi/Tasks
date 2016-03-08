@@ -1,0 +1,53 @@
+body {
+	color:blue;
+	text-aligh:center; 
+}
+h1{
+ text-align: center;
+ text-decoration:underline;
+
+
+}
+#container{
+	
+	width: auto;
+	height:auto;
+	}
+/*label{
+	
+	text-indent: 20px;
+	margin: 10px 15px 10px 10px;
+	padding:10px;
+}*/	
+label input textarea select
+{
+	display: inline-block;
+	/*line-height: 20px;*/
+}
+
+#male-female {
+	position: absolute;
+	left: 230px;
+}
+
+.inputdiv input, .inputdiv textarea,.inputdiv select,.inputdiv img,.inputdiv video
+{
+	
+	border: 1px solid;
+	position: absolute;
+    left:200px;
+}
+
+
+.inputdiv label
+{
+	
+	border: 0px solid;
+	position: absolute;
+    left:1px;
+    white-space: nowrap;
+    white-space: pre-line;
+
+}
+
+
