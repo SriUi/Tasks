@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Example of Bootstrap 3 Static Navbar</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+    .bs-example{
+    	margin: 20px;
+    }
+    
+</style>
+<script>
+$(document).ready(function(e){
+    var tabs = $('.tab');
+    tabs.hide();
+    $('#tabs').find('a').on('click',function(e){
+        e.preventDefault();//to prevent default url //hash selections display for the tabs
+        $(this.hash).addClass('active');
+        $(this.hash).show().siblings().hide();
+    }).first().click();
+    validLogin();
+});
+function validLogin(){
+    $('#login').click(function(){
+        var uName = $('#inputEmail');
+        var pwd = $('#inputPwd');
+        uName.blur(function(){
+
+            if( !isValidEmail(uName.val())){
+
+
+                $(this).css('border','solid 1px red');
+                $("#msg").text("Enter the username");
+            }
+            else{alert("entered valid email format");}
+
+        });
+             
+    });
+
+}
+function isValidEmail(email){
+    var emailPattern = new RegExp("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$");
+    if(emailPattern.test(email)){
+        return true;
+    }
+    //alert('Entered valid email address')
+    return false;
+}
+</script>
+</head> 
+<body>
+<div class="bs-example" id="tabs">
+    <nav role="navigation" class="navbar navbar-default">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a href="#ui" class="navbar-brand">UI Dev</a>
+        </div>
+        <!-- Collection of nav links and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ><a href="#home">Home</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div class="tab-content">
+<div class="tab" id="ui">
+    <p id="uiContent"> This is the UI page</p>    
+</div> 
+<div class="tab" id="home">
+    <p id="homeTabContent"> This is the home page</p>    
+</div>  
+<div class="tab" id="profile">
+    <p id="profileTabContent"> This is the Profile page</p>    
+</div> 
+<div class="tab" id="about">
+    <p id="aboutTabContent"> This is the About page</p>    
+</div> 
+<div class="tab" id="login">
+    <form class="form-horizonatal" id="loginTabContent">
+    <div class="form-group">
+        <label for="inputEmail" class="control-label col-xs-2">Email</label>
+        <div class="col-xs-4">
+        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+        </div>
+    </div>
+    <br><br>
+    <div class="form-group">
+        <label for="inputPassword" class="control-label col-xs-2">Password</label>
+        <div class="col-xs-4">
+        <input type="password" class="form-control" id="inputPwd" placeholder="Password">
+        </div>
+    </div>
+    <br>
+    
+    <div id="logindivmsg">
+    </div>
+    <div>    
+        <br>
+    <button type="submit"  class="btn btn-primary" id="login">Login</button>
+
+<div id="msg">
+</div>
+</div>
+</form>
+
+</div>  
+</body>
+</html>                                		
